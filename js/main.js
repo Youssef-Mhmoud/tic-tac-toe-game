@@ -40,8 +40,22 @@ function winner() {
     end(1,5,9)
   } else if (square[3] == square[5] && square[5] == square[7] && square[3] != '') {
     end(3,5,7)
-  } 
+  }
+  
+  else if (square[1] && square[2] && square[3] && square[4] && square[5] && square[6] && square[7] && square[8] && square[9] != '') {
+    title.innerHTML = 'Draw'
+    setInterval(() => {
+      title.innerHTML += '.'
+    }, 1000)
+    setTimeout(() => {
+      location.reload()
+    }, 3000);
+  }
 }
+setTimeout(() => {
+
+}, 3000)
+
 function game(id) {
   let element = document.getElementById(id)
   if (turn === 'X' && element.innerHTML == '') {
