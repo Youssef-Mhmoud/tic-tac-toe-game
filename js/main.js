@@ -4,9 +4,9 @@ let square = [];
 
 function end(num1, num2, num3) {
   title.innerHTML = `${square[num1]} Winner`;
-  document.getElementById(`item${num1}`).style.backgroundColor = "black";
-  document.getElementById(`item${num2}`).style.background = "black";
-  document.getElementById(`item${num3}`).style.background = "black";
+  document.getElementById(`item${num1}`).style.backgroundColor = "#4caf50";
+  document.getElementById(`item${num2}`).style.background = "#4caf50";
+  document.getElementById(`item${num3}`).style.background = "#4caf50";
 
   setInterval(() => {
     title.innerHTML += ".";
@@ -117,12 +117,20 @@ squaresEl.forEach((square) => {
   });
 });
 
-
 // Dark mode
 
-const body = document.body
-const darkBtn = document.querySelector('.dark-mode')
+const body = document.body;
+const darkBtn = document.querySelector(".dark-mode");
 
-darkBtn.addEventListener('click', (e) => {
-  body.classList.toggle('dark')
-})
+darkBtn.addEventListener("click", (e) => {
+  localStorage.setItem("isDarkMode", true);
+  body.classList.toggle("dark");
+  
+  if (body.className !== "dark") {
+    localStorage.setItem("isDarkMode", false);
+  }
+});
+
+if (localStorage.getItem("isDarkMode") === "true") {
+  body.classList.toggle("dark");
+}
