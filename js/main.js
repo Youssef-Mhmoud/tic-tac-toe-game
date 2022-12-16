@@ -116,3 +116,13 @@ squaresEl.forEach((square) => {
     e.target.classList.add("rotate");
   });
 });
+
+
+// Dark mode
+
+const body = document.body
+const darkBtn = document.querySelector('.dark-mode')
+
+darkBtn.addEventListener('click', (e) => {
+  body.classList.toggle('dark')
+})
