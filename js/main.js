@@ -4,9 +4,9 @@ let square = [];
 
 function end(num1, num2, num3) {
   title.innerHTML = `${square[num1]} Winner`;
-  document.getElementById(`item${num1}`).style.backgroundColor = "#4caf50";
-  document.getElementById(`item${num2}`).style.background = "#4caf50";
-  document.getElementById(`item${num3}`).style.background = "#4caf50";
+  document.getElementById(`item${num1}`).style.backgroundColor = "#30c035";
+  document.getElementById(`item${num2}`).style.background = "#30c035";
+  document.getElementById(`item${num3}`).style.background = "#30c035";
 
   setInterval(() => {
     title.innerHTML += ".";
