@@ -104,11 +104,11 @@ span {
 }
 .rotate--360 {
   animation: rotate-1 1s linear forwards;
-  box-shadow: 0 0 32px 3px rgb(255, 255, 255);
+  box-shadow: 0 0 32px 3px black;
 }
 .rotate--3 {
   animation: rotate 1s linear forwards;
-  box-shadow: 0 0 32px 3px black;
+  box-shadow: 0 0 32px 3px rgb(255, 255, 255);
 }
 
 @keyframes rotate {
