@@ -125,7 +125,8 @@ const darkBtn = document.querySelector(".dark-mode");
 darkBtn.addEventListener("click", (e) => {
   localStorage.setItem("isDarkMode", true);
   body.classList.toggle("dark");
-  
+  darkBtn.classList.toggle('rotate--360')
+  darkBtn.classList.toggle('rotate--3')
   if (body.className !== "dark") {
     localStorage.setItem("isDarkMode", false);
   }
