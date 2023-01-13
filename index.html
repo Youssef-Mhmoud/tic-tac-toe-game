@@ -4,29 +4,51 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="css/style.css" />
-    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <title>Tic Tac Toe</title>
   </head>
   <body>
-    <div class="dark-mode rotate--3">
-
-    </div>
-    <div class="container">
-      <div class="title"><span>X O</span> GAME</div>
-      <div class="parent">
-        <div class="square" id="item1" onclick="game(this.id)"></div>
-        <div class="square" id="item2" onclick="game(this.id)"></div>
-        <div class="square" id="item3" onclick="game(this.id)"></div>
-
-        <div class="square" id="item4" onclick="game(this.id)"></div>
-        <div class="square" id="item5" onclick="game(this.id)"></div>
-        <div class="square" id="item6" onclick="game(this.id)"></div>
-
-        <div class="square" id="item7" onclick="game(this.id)"></div>
-        <div class="square" id="item8" onclick="game(this.id)"></div>
-        <div class="square" id="item9" onclick="game(this.id)"></div>
+    <div class="players">
+      <div class="player player--0 player--active">
+        <h2 class="player-name">PLAYER 1</h2>
+        <p class="player-score" id="score--0">0</p>
+        <div class="player-current-turn">
+          <span class="number-turn turn--0">0</span>
+          <span class="name-turn turn--0">X</span>
+        </div>
+      </div>
+      <div class="player player--1">
+        <h2 class="player-name">PLAYER 2</h2>
+        <p class="player-score" id="score--1">0</p>
+        <div class="player-current-turn">
+          <span class="number-turn turn--1">0</span>
+          <span class="name-turn">O</span>
+        </div>
       </div>
     </div>
-    <script src="js/main.js"></script>
+
+    <div class="container">
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+    </div>
+
+    <div class="overlay hidden"></div>
+    <div class="box-options hidden">
+      <p class="win-draw">Player 1 Winner</p>
+      <div class="btn-options">
+        <button class="continue">Continue</button>
+        <button class="reset">New game</button>
+      </div>
+    </div>
+
+    <button class="reset reset-body">New game</button>
+    <script src="script.js"></script>
   </body>
 </html>
