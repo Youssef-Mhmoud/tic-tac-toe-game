@@ -203,6 +203,11 @@ body {
   background-color: #9544a5;
 }
 
+.reset-body:active {
+  transform: translateX(-50%) scale(.9);
+  box-shadow: 0 1.2rem 3.2rem rgba(0, 0, 0, 0.1);
+}
+
 .hidden {
   display: none;
 }

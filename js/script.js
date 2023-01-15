@@ -62,7 +62,7 @@ const winnerFunc = (num1, num2, num3) => {
   overlay.classList.remove("hidden");
   document.querySelector(".continue").classList.remove("hidden");
   document.querySelector(".win-draw").textContent =
-    btnBoxes[num1].textContent === "X" ? "Player 1 Winner" : "Player 2 Winner";
+    btnBoxes[num1].textContent === "X" ? "Player 1 Winner 🏆" : "Player 2 Winner 🏆";
   btnBoxes[num1].textContent === "X"
     ? score0El.textContent++
     : score1El.textContent++;
