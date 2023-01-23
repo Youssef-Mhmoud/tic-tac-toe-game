@@ -62,7 +62,9 @@ const winnerFunc = (num1, num2, num3) => {
   overlay.classList.remove("hidden");
   document.querySelector(".continue").classList.remove("hidden");
   document.querySelector(".win-draw").textContent =
-    btnBoxes[num1].textContent === "X" ? "Player 1 Winner 🏆" : "Player 2 Winner 🏆";
+    btnBoxes[num1].textContent === "X"
+      ? "Player 1 Winner 🏆"
+      : "Player 2 Winner 🏆";
   btnBoxes[num1].textContent === "X"
     ? score0El.textContent++
     : score1El.textContent++;
@@ -107,7 +109,6 @@ const win = () => {
 };
 
 // Reset
-
 document.querySelectorAll(".reset").forEach((btn) => {
   btn.addEventListener("click", function () {
     turn0.textContent = 0;
@@ -122,6 +123,11 @@ document.querySelectorAll(".reset").forEach((btn) => {
     }
     boxOpitons.classList.add("hidden");
     overlay.classList.add("hidden");
+
+    // Return Player X
+    turn = "X";
+    player0.classList.add("player--active");
+    player1.classList.remove("player--active");
   });
 });
 
