@@ -119,7 +119,7 @@ document.querySelectorAll(".reset").forEach((btn) => {
     score1El.textContent = 0;
     for (let i = 0; i < btnBoxes.length; i++) {
       btnBoxes[i].textContent = "";
-      btnBoxes[i].style.backgroundColor = "#333";
+      btnBoxes[i].style.backgroundColor = "#ffffff1a";
     }
     boxOpitons.classList.add("hidden");
     overlay.classList.add("hidden");
@@ -139,7 +139,7 @@ document.querySelector(".continue").addEventListener("click", function () {
   currentX = 0;
   for (let i = 0; i < btnBoxes.length; i++) {
     btnBoxes[i].textContent = "";
-    btnBoxes[i].style.backgroundColor = "#333";
+    btnBoxes[i].style.backgroundColor = "#ffffff1a";
   }
   boxOpitons.classList.add("hidden");
   overlay.classList.add("hidden");
