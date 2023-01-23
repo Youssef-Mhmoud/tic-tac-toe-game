@@ -139,7 +139,7 @@ body {
 
 .box:hover {
   /* background-color: rgb(65, 65, 65) !important; */
-  background-color: rgba(255, 255, 255, 0.25);
+  background-color: rgba(255, 255, 255, 0.25) !important;
 
 }
 /*--------------------------------------*/
@@ -213,6 +213,9 @@ body {
 
 .reset:hover {
   background-color: #9544a5;
+
+  box-shadow: 0 1.2rem 2.6rem rgba(0, 0, 0, 0.15);
+
 }
 
 .reset-body:active {
