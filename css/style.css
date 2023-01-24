@@ -140,7 +140,6 @@ body {
 .box:hover {
   /* background-color: rgb(65, 65, 65) !important; */
   background-color: rgba(255, 255, 255, 0.25) !important;
-
 }
 /*--------------------------------------*/
 /*-------- BOX OPTIONS ------------*/
@@ -150,12 +149,19 @@ body {
   top: 50%;
   transform: translate(-50%, -50%);
 
+  width: 480px;
+  max-width: 100%;
+
+
   background-color: #c2c1c1;
   padding: 3.2rem;
   border-radius: 6px;
   text-align: center;
 
   z-index: 999;
+
+  transition: all .4s;
+
 }
 
 .overlay {
@@ -168,14 +174,16 @@ body {
 
   backdrop-filter: blur(2px);
   z-index: 1;
+
+  transition: all .4s;
 }
 
 .btn-options {
   display: flex;
+  flex-direction: column-reverse;
   align-items: center;
   justify-content: center;
   gap: 3.4rem;
-
   margin-top: 3.2rem;
 }
 
@@ -215,7 +223,6 @@ body {
   background-color: #9544a5;
 
   box-shadow: 0 1.2rem 2.6rem rgba(0, 0, 0, 0.15);
-
 }
 
 .reset-body:active {
@@ -224,7 +231,9 @@ body {
 }
 
 .hidden {
-  display: none;
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
 }
 
 .reset-body {
