@@ -111,20 +111,27 @@ const win = () => {
 };
 
 // Reset
+const resetFunc = () => {
+  btnBoxes.forEach((box) => {
+    box.textContent = "";
+    box.style.backgroundColor = "#ffffff1a";
+  });
+
+  turn0.textContent = 0;
+  turn1.textContent = 0;
+  currentO = 0;
+  currentX = 0;
+
+  boxOpitons.classList.add("hidden");
+  overlay.classList.add("hidden");
+};
+
 document.querySelectorAll(".reset").forEach((btn) => {
   btn.addEventListener("click", function () {
-    turn0.textContent = 0;
-    turn1.textContent = 0;
-    currentO = 0;
-    currentX = 0;
     score0El.textContent = 0;
     score1El.textContent = 0;
-    for (let i = 0; i < btnBoxes.length; i++) {
-      btnBoxes[i].textContent = "";
-      btnBoxes[i].style.backgroundColor = "#ffffff1a";
-    }
-    boxOpitons.classList.add("hidden");
-    overlay.classList.add("hidden");
+
+    resetFunc();
 
     // Return Player X
     turnFunc("X", player1, player0);
@@ -132,15 +139,4 @@ document.querySelectorAll(".reset").forEach((btn) => {
 });
 
 // Continue
-document.querySelector(".continue").addEventListener("click", function () {
-  turn0.textContent = 0;
-  turn1.textContent = 0;
-  currentO = 0;
-  currentX = 0;
-  for (let i = 0; i < btnBoxes.length; i++) {
-    btnBoxes[i].textContent = "";
-    btnBoxes[i].style.backgroundColor = "#ffffff1a";
-  }
-  boxOpitons.classList.add("hidden");
-  overlay.classList.add("hidden");
-});
+document.querySelector(".continue").addEventListener("click", resetFunc);
