@@ -22,6 +22,12 @@ let turn = "X";
 let currentO = 0;
 let currentX = 0;
 
+const turnFunc = (letter, player0, player1) => {
+  turn = letter;
+  player0.classList.remove("player--active");
+  player1.classList.add("player--active");
+};
+
 btnBoxes.forEach((box) => {
   box.addEventListener("click", () => {
     if (turn === "X" && box.textContent == "") {
@@ -29,17 +35,13 @@ btnBoxes.forEach((box) => {
 
       currentX++;
       turn0.textContent = currentX;
-      turn = "O";
-      player0.classList.remove("player--active");
-      player1.classList.add("player--active");
+      turnFunc("O", player0, player1);
     } else if (turn === "O" && box.textContent == "") {
       box.textContent = turn;
 
       currentO++;
       turn1.textContent = currentO;
-      turn = "X";
-      player0.classList.add("player--active");
-      player1.classList.remove("player--active");
+      turnFunc("X", player1, player0);
     }
 
     win();
@@ -125,9 +127,7 @@ document.querySelectorAll(".reset").forEach((btn) => {
     overlay.classList.add("hidden");
 
     // Return Player X
-    turn = "X";
-    player0.classList.add("player--active");
-    player1.classList.remove("player--active");
+    turnFunc("X", player1, player0);
   });
 });
 
