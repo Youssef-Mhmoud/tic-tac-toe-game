@@ -114,8 +114,7 @@ body {
   /* background-color: #333; */
   background-color: #ffffff1a;
   box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.1);
-  /* backdrop-filter: blur( 18px );
--webkit-backdrop-filter: blur( 18px ); */
+
   border-radius: 10px;
   border: 1px solid rgba(255, 255, 255, 0.18);
 
@@ -152,7 +151,6 @@ body {
   width: 480px;
   max-width: 100%;
 
-
   background-color: #c2c1c1;
   padding: 3.2rem;
   border-radius: 6px;
@@ -161,7 +159,6 @@ body {
   z-index: 999;
 
   transition: all .4s;
-
 }
 
 .overlay {
