@@ -57,7 +57,7 @@ body {
 
 .player--active {
   box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.3);
-  background-color: rgba(255, 255, 255, 0.468);
+  background-color: rgba(255, 255, 255, 0.568);
 }
 
 .player--active .player-name {
@@ -215,7 +215,7 @@ body {
   background-color: #bf2e34;
   color: #fff;
 }
-
+.reset:active,
 .reset:hover {
   background-color: #9544a5;
 
