@@ -13,6 +13,9 @@ const player1 = document.querySelector(".player--1");
 
 const boxOpitons = document.querySelector(".box-options");
 const overlay = document.querySelector(".overlay");
+const continueBtn = document.querySelector(".continue");
+
+const winDraw = document.querySelector(".win-draw");
 
 // Starting conditions
 score0El.textContent = 0;
@@ -22,6 +25,27 @@ let turn = "X";
 let currentO = 0;
 let currentX = 0;
 
+// -----------------------------------
+const nameCont = document.querySelector(".name-cont");
+const form3 = document.querySelector(".form");
+const name1 = document.querySelector(".name-player1");
+const name2 = document.querySelector(".name-player2");
+
+const playerName1 = document.querySelector(".val1");
+const playerName2 = document.querySelector(".val2");
+
+form3.addEventListener("submit", function (e) {
+  e.preventDefault();
+
+  if (name1.value === "" || name2.value === "") return;
+  playerName1.innerText = name1.value;
+  playerName2.innerText = name2.value;
+
+  nameCont.classList.add("hidden");
+});
+// -----------------------------------
+
+// Choose player turn
 const turnFunc = (letter, player0, player1) => {
   turn = letter;
   player0.classList.remove("player--active");
@@ -56,20 +80,24 @@ const winCondition = (num1, num2, num3) => {
   );
 };
 
+const removeHidden = function (...inputArr) {
+  inputArr.forEach((ele) => ele.classList.remove("hidden"));
+};
+
 const winnerFunc = (num1, num2, num3) => {
   btnBoxes[num1].style.backgroundColor = "#4caf50";
   btnBoxes[num2].style.backgroundColor = "#4caf50";
   btnBoxes[num3].style.backgroundColor = "#4caf50";
-  boxOpitons.classList.remove("hidden");
-  overlay.classList.remove("hidden");
-  document.querySelector(".continue").classList.remove("hidden");
-  document.querySelector(".win-draw").textContent =
-    btnBoxes[num1].textContent === "X"
-      ? "Player 1 Winner 🏆"
-      : "Player 2 Winner 🏆";
-  btnBoxes[num1].textContent === "X"
-    ? score0El.textContent++
-    : score1El.textContent++;
+
+  removeHidden(overlay, continueBtn, boxOpitons);
+
+  if (btnBoxes[num1].textContent === "X") {
+    winDraw.textContent = `${name1.value} is Winner 🏆`;
+    score0El.textContent++;
+  } else {
+    winDraw.textContent = `${name2.value} is Winner 🏆`;
+    score1El.textContent++;
+  }
 };
 
 const draw = () => {
@@ -104,9 +132,8 @@ const win = () => {
   } else if (winCondition(2, 5, 8)) {
     winnerFunc(2, 5, 8);
   } else if (draw()) {
-    boxOpitons.classList.remove("hidden");
-    overlay.classList.remove("hidden");
-    document.querySelector(".win-draw").textContent = "DRAW";
+    removeHidden(boxOpitons, overlay);
+    winDraw.textContent = "DRAW";
   }
 };
 
@@ -139,4 +166,4 @@ document.querySelectorAll(".reset").forEach((btn) => {
 });
 
 // Continue
-document.querySelector(".continue").addEventListener("click", resetFunc);
+continueBtn.addEventListener("click", resetFunc);
